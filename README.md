@@ -1,5 +1,11 @@
 # 我的电脑个人配置
 
+## init
+
+```shell
+curl -o- https://raw.githubusercontent.com/Liugq5713/mac_config/master/init.sh | bash
+```
+
 ## alacritty
 
 我的终端配置

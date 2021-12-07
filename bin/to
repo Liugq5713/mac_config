@@ -1,0 +1,31 @@
+#!/bin/bash
+
+EH=/Users/liuguangqi/workspace/h_cloud/monorepo
+
+EHT=/Users/liuguangqi/workspace/h_cloud/teacher_pc_jupiter
+
+Growth=/Users/liuguangqi/Growth/growth_cloud
+
+BIN=/Users/liuguangqi/bin
+
+# 展示 shell 执行语句
+# set -x 
+
+case $1 in
+	h) cd "$EH" 
+		;;
+
+	t) cd "$EHT"
+		;;
+
+	g) cd "$Growth"
+		;;
+
+
+	b) cd "$BIN"
+		;;
+esac
+
+# 默认情况下，该脚本在当前环境中执行，不会影响父级环境
+# 创建一个新的 sub shell
+$SHELL

@@ -1,0 +1,18 @@
+
+#!/bin/bash
+
+set -x 
+
+board='@byted-classroom/board'
+courseware="@byted-classroom/courseware"
+device="@byted-classroom/device-detect"
+idl="@byted-classroom/idl"
+monitor="@byted-classroom/monitor"
+network="@byted-classroom/network"
+playback="@byted-classroom/playback"
+player="@byted-classroom/player"
+room="@byted-classroom/room"
+
+version=$1
+
+jq ".dependencies.\"${board}\"=\"${version}\"" package.json  | jq ".dependencies.\"${courseware}\"=\"${version}\"" | jq ".dependencies.\"${device}\"=\"${version}\""| jq ".dependencies.\"${idl}\"=\"${version}\"" | jq ".dependencies.\"${monitor}\"=\"${version}\""  | jq ".dependencies.\"${network}\"=\"${version}\""| jq ".dependencies.\"${playback}\"=\"${version}\""| jq ".dependencies.\"${player}\"=\"${version}\"" | jq ".dependencies.\"${room}\"=\"${version}\"" | sponge package.json

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#set -x
+
+array=`ls`;
+
+#array=($(ls))
+
+for i in $array; do
+	if [ "$i" != "index.js" ]; then
+ 	 	j=${i[@]/.md/}
+		a="'${j}',${a}"
+	fi
+done
+
+echo $a
+
+echo $a | pbcopy

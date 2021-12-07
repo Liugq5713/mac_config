@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+const dayjs = require('dayjs');
+setTimeout(() => {
+  console.log('hello', dayjs().format());
+}, 1000);

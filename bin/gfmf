@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# 格式化 git 中修改的文件，格式化配置来自家目录
+
+
+# 格式化已经被追踪的文件
+
+trackedFile=$(git diff --name-only)
+for t in $trackedFile
+do
+    prettier --config ~/.prettierrc --write $t
+done
+
+# 格式化未被追踪的文件
+untrackedFile=$(git ls-files --others --exclude-standard | xargs echo)
+for f in $untrackedFile 
+do
+	prettier --config ~/.prettierrc --write $f
+done

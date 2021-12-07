@@ -1,0 +1,54 @@
+#!/bin/bash
+
+
+PACKAGE_VERSION=$1
+
+MAJOR=$(echo "${PACKAGE_VERSION}" | awk -F. '{print $1}')
+MINOR=$(echo "${PACKAGE_VERSION}" | awk -F. '{print $2}')
+PATCH=$(echo "${PACKAGE_VERSION}" | awk -F. '{print $3}')
+
+echo $PACKAGE_VERSION $MAJOR $MINOR $PATCH
+
+modify_feat_version(){
+	if [[ `expr $PATCH % 5` -eq 0 ]]; then
+		NEW_PATCH=`expr $PATCH + 5`
+	else
+		NEW_PATCH=`expr $PATCH + 5 - $PATCH % 5`
+	fi
+
+	if [ $NEW_PATCH -ge 10 ];then
+		NEW_MINOR=`expr $MINOR + 1`
+
+		if [ $NEW_MINOR -ge 10 ];then
+			NEW_MAJOR=`expr $MAJOR + 1`
+			NEW_PACKAGE_VERSION=${NEW_MAJOR}.0.0
+		else
+			NEW_PACKAGE_VERSION=${MAJOR}.${NEW_MINOR}.0
+		fi
+	else
+		NEW_PACKAGE_VERSION=${MAJOR}.${MINOR}.${NEW_PATCH}
+	fi
+}
+
+
+
+modify_fix_version(){
+		#  minor和patch都不超过10 , 如果超过就进一
+		NEW_PATCH=`expr $PATCH + 1`
+		if [ $NEW_PATCH -ge 10 ];then
+			NEW_MINOR=`expr $MINOR + 1`
+			if [ $NEW_MINOR -ge 10 ]; then
+				NEW_MAJOR=`expr $MAJOR + 1`
+				NEW_PACKAGE_VERSION=${NEW_MAJOR}.0.0
+			else
+				NEW_PACKAGE_VERSION=${MAJOR}.${NEW_MINOR}.0
+			fi
+		else
+			NEW_PACKAGE_VERSION=${MAJOR}.${MINOR}.${NEW_PATCH}
+		fi
+}
+
+#modify_fix_version
+modify_feat_version
+
+echo $NEW_PACKAGE_VERSION

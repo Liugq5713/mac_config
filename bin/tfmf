@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# 格式化 git 中修改的文件，格式化配置来自家目录
+
+
+cd $HOME/workspace/h_cloud/monorepo
+# 格式化已经被追踪的文件
+
+trackedFile=$(git diff --name-only)
+
+# 格式化未被追踪的文件
+untrackedFile=$(git ls-files --others --exclude-standard | xargs echo)
+
+cd $HOME/workspace/h_cloud/monorepo/apps/tutor/teacher_pc
+
+for t in $trackedFile
+do
+	a=$(echo $t| sed 's/apps\/tutor\/teacher_pc\///')
+	rushx lint $a
+done
+for f in $untrackedFile 
+do
+	b=$(echo $t| sed 's/apps\/tutor\/teacher_pc\///')
+	rushx lint $b
+done
+
+
+

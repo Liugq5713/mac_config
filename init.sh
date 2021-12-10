@@ -10,12 +10,12 @@ brew update
 brew upgrade
 
 brew install node
-brew cask install google-chrome
-brew cask install neteasemusic
-brew cask install wechat
-brew cask install qq
-brew cask install visual-studio-code
-brew cask install postman
+brew install --cask google-chrome
+brew install --cask neteasemusic
+brew install --cask wechat
+brew install --cask  qq
+brew install --cask visual-studio-code
+brew install --cask postman
 # relax reminder  
 brew install --cask stretchly
 

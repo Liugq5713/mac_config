@@ -12,11 +12,24 @@ curl -o- https://raw.githubusercontent.com/Liugq5713/mac_config/master/init.sh |
 
 ## tmux
 
-[gpakosz/.tmux: 🇫🇷 Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️](https://github.com/gpakosz/.tmux)
+[gpakosz/.tmux: Oh my tmux! My self-contained, pretty & versatile tmux configuration made with ❤️](https://github.com/gpakosz/.tmux)
+
+prefix + I，fetch the plugin and source it.
 
 ## vim
 
 [Liugq5713/nvim](https://github.com/Liugq5713/nvim)
+
+如果你的 pip3 运行有问题，可以运行命令
+
+You should consider upgrading via the '/Library/Developer/CommandLineTools/usr/bin/python3 -m pip install --upgrade pip' command.
+
+然后运行
+
+```shell
+pip2 install neovim
+pip3 install neovim
+```
 
 ## .zshrc
 

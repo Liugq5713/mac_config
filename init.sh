@@ -10,20 +10,23 @@ brew update
 brew upgrade
 
 brew install node
+brew install tmux
 brew install --cask google-chrome
 brew install --cask neteasemusic
 brew install --cask wechat
 brew install --cask  qq
 brew install --cask visual-studio-code
 brew install --cask postman
+brew install --cask alacritty
+brew install --cask alfred
+
 # relax reminder  
 brew install --cask stretchly
-
-
 
 brew install neovim
 brew install git
 brew install fzf
+brew install fd
 brew install jq
 brew install autojump
 # A command line client for MySQL that can do auto-completion and syntax highlighting.
@@ -47,6 +50,9 @@ chsh -s /bin/zsh
 echo '[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh' >> ~/.zshrc
 source ~/.zshrc
 
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 # tmux
 cd 
 git clone https://github.com/gpakosz/.tmux.git
@@ -61,6 +67,10 @@ echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm' >> ~/.zs
 source ~/.zshrc
 
 # prepare folders
+mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/nvim
+
+mkdir -p ~/temp
 mkdir -p ~/workspace
 mkdir -p ~/bin
 

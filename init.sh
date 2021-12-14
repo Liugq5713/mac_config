@@ -26,6 +26,7 @@ brew install --cask stretchly
 brew install neovim
 brew install git
 brew install fzf
+brew install ripgrep
 brew install fd
 brew install jq
 brew install autojump

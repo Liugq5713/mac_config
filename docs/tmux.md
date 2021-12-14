@@ -38,12 +38,23 @@ tmux kill-session -t xxx
 ```
 
 ## session
-
 ```js
 Ctrl+b d：分离当前会话。
 Ctrl+b s：列出所有会话。
 Ctrl+b $：重命名当前会话。
 ```
+
+### create session
+
+- outside a tmux session 
+
+创建一个新的 session , `tmux new -s xxx`
+
+- [Create new tmux session from inside a tmux session | Newbedev](https://newbedev.com/create-new-tmux-session-from-inside-a-tmux-session)
+
+The quickest way (assuming you use ctrl-b as your command prefix) is:
+
+`ctrl-b :new`
 
 ## window 间切换
 

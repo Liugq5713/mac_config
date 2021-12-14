@@ -1,4 +1,4 @@
-# 'Mac Tutorial'
+# Mac Tutorial
 
 ## 基本配置
 

@@ -79,6 +79,7 @@ mkdir -p ~/bin
 npm i -g yarn
 npm i -g typescript
 npm i -g prettier
+npm i -g nrm
 
 WORKDIR=`pwd`
 
